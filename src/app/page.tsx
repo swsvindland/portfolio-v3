@@ -1,18 +1,18 @@
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 
-import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import { ComponentPropsWithoutRef, ComponentType } from 'react'
 import { GITHUB_LINK, LINKEDIN_LINK } from '@/lib/contants'
+import logoNulia from '@/images/logos/work/nulia.svg'
+import logoOregon from '@/images/logos/work/oregon.svg'
+import transceptaLogo from '@/images/logos/work/transcepta.png'
+import edgdeLogo from '@/images/logos/work/edgde.png'
+import tlpLogo from '@/images/logos/work/tlp.png'
 
 function BriefcaseIcon(props: ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -128,7 +128,7 @@ function Resume() {
     {
       company: 'TLP Software',
       title: 'Sr. Software Engineer',
-      logo: logoPlanetaria,
+      logo: tlpLogo,
       start: '2023',
       end: {
         label: 'Present',
@@ -138,28 +138,28 @@ function Resume() {
     {
       company: 'Transcepta',
       title: 'Sr. Frontend Engineer',
-      logo: logoPlanetaria,
+      logo: transceptaLogo,
       start: '2021',
       end: '2023',
     },
     {
       company: 'Nulia',
       title: 'Frontend Developer',
-      logo: logoAirbnb,
+      logo: logoNulia,
       start: '2019',
       end: '2021',
     },
     {
       company: 'Edgde',
       title: 'Software Engineer Intern',
-      logo: logoFacebook,
+      logo: edgdeLogo,
       start: '2019',
       end: '2019',
     },
     {
       company: 'University of Oregon',
       title: 'iOS App Developer',
-      logo: logoStarbucks,
+      logo: logoOregon,
       start: '2017',
       end: '2018',
     },

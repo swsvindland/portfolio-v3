@@ -13,11 +13,6 @@ export const metadata: Metadata = {
   },
   description:
     'I’m Sam, a software engineer based in Arlington, VA. I’m passionate about building software that improves automates daily repetitive tasks.',
-  alternates: {
-    types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
-    },
-  },
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {

@@ -1,0 +1,31 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import screenshot from './watertrack.webp'
+
+export const article = {
+  author: 'Sam Svindland',
+  date: '2024-02-20',
+  title: 'Releasing WaterTrack Version 4',
+  description:
+    'I just released the fourth major version of my most popular mobile app WaterTrack.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+I just released the fourth major version of my most popular mobile app WaterTrack. This update includes only a small number of changes but they are hopefully very useful to our users.
+
+## Drink Size Slider
+<Image src={screenshot} alt="" />
+
+## Material Design Version 3
+
+See the [official docs](https://m3.material.io/) for what material v3 encompasses but I mainly focused on the parts like adaptive color and the navigation components.
+
+## Updated to Flutter 3.19
+  - This update from the Flutter team fixed a number of issues with some material components behaving differently than their native counter parts.
+  - I upgraded from a version that did not use Impeller on IOS so this version got those performance benefits and I am already seeing less stuttering on certain animations.
+

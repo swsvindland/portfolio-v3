@@ -11,6 +11,8 @@ import {
   XIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/avatar.jpg'
+import { ComponentType, ReactNode } from 'react'
+import { GITHUB_LINK, LINKEDIN_LINK } from '@/lib/contants'
 
 function SocialLink({
   className,
@@ -20,8 +22,8 @@ function SocialLink({
 }: {
   className?: string
   href: string
-  icon: React.ComponentType<{ className?: string }>
-  children: React.ReactNode
+  icon: ComponentType<{ className?: string }>
+  children: ReactNode
 }) {
   return (
     <li className={clsx(className, 'flex')}>
@@ -69,8 +71,7 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I’m Spencer Sharp. I live in New York City, where I design the
-            future.
+            I’m Sam Svindland. I live in Arlington VA
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
@@ -103,24 +104,22 @@ export default function About() {
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="#" icon={XIcon}>
-              Follow on X
-            </SocialLink>
-            <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-              Follow on Instagram
-            </SocialLink>
-            <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+            <SocialLink href={GITHUB_LINK} icon={GitHubIcon} className="mt-4">
               Follow on GitHub
             </SocialLink>
-            <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+            <SocialLink
+              href={LINKEDIN_LINK}
+              icon={LinkedInIcon}
+              className="mt-4"
+            >
               Follow on LinkedIn
             </SocialLink>
             <SocialLink
-              href="mailto:spencer@planetaria.tech"
+              href="mailto:swsvindland@gmail.com"
               icon={MailIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
-              spencer@planetaria.tech
+              swsvindland@gmail.com
             </SocialLink>
           </ul>
         </div>

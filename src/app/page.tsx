@@ -12,6 +12,7 @@ import logoStarbucks from '@/images/logos/starbucks.svg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 import { ComponentPropsWithoutRef, ComponentType } from 'react'
+import { GITHUB_LINK, LINKEDIN_LINK } from '@/lib/contants'
 
 function BriefcaseIcon(props: ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -175,10 +176,11 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-      </Button>
+      {/*TODO: Add updated resume*/}
+      {/*<Button href="#" variant="secondary" className="group mt-6 w-full">*/}
+      {/*  Download CV*/}
+      {/*  <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />*/}
+      {/*</Button>*/}
     </div>
   )
 }
@@ -201,12 +203,12 @@ export default async function Home() {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://github.com/swsvindland"
+              href={GITHUB_LINK}
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://www.linkedin.com/in/sam-svindland-649611b5"
+              href={LINKEDIN_LINK}
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />

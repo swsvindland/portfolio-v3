@@ -1,6 +1,14 @@
 'use client'
 
-import { Fragment, useEffect, useRef, useState } from 'react'
+import {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  Fragment,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -11,7 +19,7 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
 
-function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function CloseIcon(props: ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -26,7 +34,7 @@ function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function ChevronDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function ChevronDownIcon(props: ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
       <path
@@ -40,7 +48,7 @@ function ChevronDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function SunIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function SunIcon(props: ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -59,7 +67,7 @@ function SunIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function MoonIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function MoonIcon(props: ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -77,7 +85,7 @@ function MobileNavItem({
   children,
 }: {
   href: string
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <li>
@@ -88,9 +96,7 @@ function MobileNavItem({
   )
 }
 
-function MobileNavigation(
-  props: React.ComponentPropsWithoutRef<typeof Popover>,
-) {
+function MobileNavigation(props: ComponentPropsWithoutRef<typeof Popover>) {
   return (
     <Popover {...props}>
       <Popover.Button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
@@ -136,7 +142,6 @@ function MobileNavigation(
                 <MobileNavItem href="/articles">Articles</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
                 <MobileNavItem href="/games">Games</MobileNavItem>
-                <MobileNavItem href="/speaking">Speaking</MobileNavItem>
                 <MobileNavItem href="/uses">Uses</MobileNavItem>
               </ul>
             </nav>
@@ -184,7 +189,6 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
         <NavItem href="/articles">Articles</NavItem>
         <NavItem href="/projects">Projects</NavItem>
         <NavItem href="/games">Games</NavItem>
-        <NavItem href="/speaking">Speaking</NavItem>
         <NavItem href="/uses">Uses</NavItem>
       </ul>
     </nav>
@@ -265,8 +269,8 @@ function Avatar({
 export function Header() {
   let isHomePage = usePathname() === '/'
 
-  let headerRef = useRef<React.ElementRef<'div'>>(null)
-  let avatarRef = useRef<React.ElementRef<'div'>>(null)
+  let headerRef = useRef<ElementRef<'div'>>(null)
+  let avatarRef = useRef<ElementRef<'div'>>(null)
   let isInitial = useRef(true)
 
   useEffect(() => {

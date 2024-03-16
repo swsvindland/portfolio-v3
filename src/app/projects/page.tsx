@@ -3,54 +3,60 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+
+import logoSup from '@/images/logos/projects/SupplementTrack.png'
+import logoPeriod from '@/images/logos/projects/PeriodTrack.png'
+import logoBlood from '@/images/logos/projects/BloodPressureTrack.png'
+import logoBody from '@/images/logos/projects/BodyTrack.png'
+import logoWater from '@/images/logos/projects/WaterTrack.png'
 
 const projects = [
   {
-    name: 'Macro Track',
-    description:
-        'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
-  },
-  {
     name: 'Supplement Track',
-    description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+    description: 'A moible application for tracking daily supplement intake.',
+    link: {
+      href: 'https://github.com/swsvindland/fitness-mobile',
+      label: 'github.com',
+    },
+    logo: logoSup,
   },
   {
     name: 'Period Track',
-    description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+    description: 'A mobile application for tracking menstrual cycles.',
+    link: {
+      href: 'https://github.com/swsvindland/fitness-mobile',
+      label: 'github.com',
+    },
+    logo: logoPeriod,
   },
   {
     name: 'Blood Pressure Track',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'A mobile app for tracking blood pressure and resting heart rate.',
+    link: {
+      href: 'https://github.com/swsvindland/fitness-mobile',
+      label: 'github.com',
+    },
+    logo: logoBlood,
   },
   {
     name: 'Body Track',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+      'A mobile application for tracking weight and body measurements.',
+    link: {
+      href: 'https://github.com/swsvindland/fitness-mobile',
+      label: 'github.com',
+    },
+    logo: logoBody,
   },
   {
     name: 'Water Track',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+    description: 'A mobile application for tracking daily hydration.',
+    link: {
+      href: 'https://github.com/swsvindland/fitness-mobile',
+      label: 'github.com',
+    },
+    logo: logoWater,
   },
 ]
 
@@ -73,8 +79,8 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title="Things I’ve made to simplify my life."
+      intro="I have worked on many projects over the years, see my github. These are the projects that are activly maintained and used in my day to day life."
     >
       <ul
         role="list"
@@ -86,7 +92,7 @@ export default function Projects() {
               <Image
                 src={project.logo}
                 alt=""
-                className="h-8 w-8"
+                className="h-10 w-10 rounded-full"
                 unoptimized
               />
             </div>

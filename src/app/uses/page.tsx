@@ -39,7 +39,7 @@ export const metadata = {
   description: 'Software I use, gadgets I love, and other things I recommend.',
 }
 
-export default function Uses() {
+export default async function Uses() {
   return (
     <SimpleLayout
       title="Software I use, gadgets I love, and other things I recommend."
@@ -53,7 +53,7 @@ export default function Uses() {
             single time, even under the incredibly heavy loads I put it through
             with our various launch simulations.
           </Tool>
-          <Tool title='Samsung 27" 4k Monitor (2x)'  >
+          <Tool title='Samsung 27" 4k Monitor (2x)'>
             The only display on the market if you want something HiDPI and
             bigger than 27”. When you’re working at planetary scale, every pixel
             you can get counts.

@@ -15,7 +15,11 @@ export const metadata: Metadata = {
     'I’m Sam, a software engineer based in Arlington, VA. I’m passionate about building software that improves automates daily repetitive tasks.',
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode
+}) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="flex h-full bg-zinc-50 dark:bg-black">

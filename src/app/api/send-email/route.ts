@@ -1,5 +1,6 @@
 import sgMail, { MailDataRequired } from '@sendgrid/mail'
 import { NextApiRequest, NextApiResponse } from 'next'
+import { NextResponse } from 'next/server'
 
 export const sendEmail = async (
   email: string,
@@ -16,8 +17,8 @@ export const sendEmail = async (
   await sgMail.send(msg)
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { email, body, phone } = req.body
-  await sendEmail(email, body, phone)
-  res.status(200).json({ message: 'Email sent' })
+export async function POST(request: NextApiRequest, response: NextApiResponse) {
+  const { email, message, phone } = request.body
+  await sendEmail(email, message, phone)
+  return NextResponse.json({ message: 'Email sent' }, { status: 200 })
 }

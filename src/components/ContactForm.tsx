@@ -20,7 +20,7 @@ export const ContactForm: FC = () => {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    await fetch('/api/sendEmail', {
+    await fetch('/api/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,11 +30,12 @@ export const ContactForm: FC = () => {
   }
 
   return (
-    <form className="grid grid-cols-1 gap-2">
+    <form className="grid grid-cols-1 gap-2" onSubmit={onSubmit}>
       <InputWithLabel
         label="Email"
         value={state.email}
         onChange={(event) => setState({ ...state, email: event.target.value })}
+        required
       />
       <InputWithLabel
         label="Phone"
@@ -47,6 +48,7 @@ export const ContactForm: FC = () => {
         onChange={(event) =>
           setState({ ...state, message: event.target.value })
         }
+        required
       />
       <Button>Submit</Button>
     </form>

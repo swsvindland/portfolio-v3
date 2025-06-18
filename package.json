@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "private": true,
   "license": "MIT",
-  "packageManager": "pnpm@9.9.0",
+  "packageManager": "pnpm@10.6.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -31,18 +31,18 @@
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.7",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^22.15.32",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@types/webpack-env": "^1.18.8",
-    "autoprefixer": "^10.4.21",
     "eslint": "^9.29.0",
     "eslint-config-next": "^15.3.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.12",
     "sharp": "0.34.1",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.1.10",
     "typescript": "^5.8.3"
   }
 }

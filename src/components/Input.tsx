@@ -32,7 +32,12 @@ export function InputWithLabel(props: InputWithLabelProps) {
   return (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <Label htmlFor={props.id}>{props.label}</Label>
-      <Input type={props.type} id={props.id} placeholder={props.placeholder} />
+      <Input
+        type={props.type}
+        id={props.id}
+        placeholder={props.placeholder}
+        {...props}
+      />
     </div>
   )
 }

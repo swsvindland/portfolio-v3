@@ -32,7 +32,7 @@ export function TextAreaWithLabel(props: TextAreaWithLabelProps) {
   return (
     <div className="grid w-full max-w-sm items-center gap-1.5">
       <Label htmlFor={props.id}>{props.label}</Label>
-      <TextArea id={props.id} placeholder={props.placeholder} />
+      <TextArea id={props.id} placeholder={props.placeholder} {...props} />
     </div>
   )
 }

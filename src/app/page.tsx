@@ -84,6 +84,7 @@ interface Role {
   logo: ImageProps['src']
   start: string | { label: string; dateTime: string }
   end: string | { label: string; dateTime: string }
+  website?: string
 }
 
 function Role({ role }: { role: Role }) {
@@ -96,29 +97,35 @@ function Role({ role }: { role: Role }) {
   let endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
 
   return (
-    <li className="flex gap-4">
-      <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
-      </div>
-      <dl className="flex flex-auto flex-wrap gap-x-2">
-        <dt className="sr-only">Company</dt>
-        <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-          {role.company}
-        </dd>
-        <dt className="sr-only">Role</dt>
-        <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-          {role.title}
-        </dd>
-        <dt className="sr-only">Date</dt>
-        <dd
-          className="ml-auto text-xs text-zinc-400 dark:text-zinc-400"
-          aria-label={`${startLabel} until ${endLabel}`}
-        >
-          <time dateTime={startDate}>{startLabel}</time>{' '}
-          <span aria-hidden="true">—</span>{' '}
-          <time dateTime={endDate}>{endLabel}</time>
-        </dd>
-      </dl>
+    <li className="flex">
+      <Link
+        target={role.website ? '_blank' : undefined}
+        className="flex w-full gap-4 rounded-2xl p-1 hover:bg-zinc-50 hover:dark:bg-zinc-800/50"
+        href={role.website ?? ''}
+      >
+        <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+        </div>
+        <dl className="flex flex-auto flex-wrap gap-x-2">
+          <dt className="sr-only">Company</dt>
+          <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+            {role.company}
+          </dd>
+          <dt className="sr-only">Role</dt>
+          <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+            {role.title}
+          </dd>
+          <dt className="sr-only">Date</dt>
+          <dd
+            className="ml-auto text-xs text-zinc-400 dark:text-zinc-400"
+            aria-label={`${startLabel} until ${endLabel}`}
+          >
+            <time dateTime={startDate}>{startLabel}</time>{' '}
+            <span aria-hidden="true">—</span>{' '}
+            <time dateTime={endDate}>{endLabel}</time>
+          </dd>
+        </dl>
+      </Link>
     </li>
   )
 }
@@ -134,6 +141,7 @@ function Resume() {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
+      website: 'https://tlpsoftware.com',
     },
     {
       company: 'Transcepta',
@@ -141,6 +149,7 @@ function Resume() {
       logo: transceptaLogo,
       start: '2021',
       end: '2023',
+      website: 'https://transcepta.com',
     },
     {
       company: 'Nulia',
@@ -148,6 +157,7 @@ function Resume() {
       logo: logoNulia,
       start: '2019',
       end: '2021',
+      website: 'https://nulia.com',
     },
     {
       company: 'Edgde',
@@ -155,6 +165,7 @@ function Resume() {
       logo: edgdeLogo,
       start: '2019',
       end: '2019',
+      website: 'https://edgde.com',
     },
     {
       company: 'University of Oregon',
@@ -162,6 +173,7 @@ function Resume() {
       logo: logoOregon,
       start: '2017',
       end: '2018',
+      website: 'https://uoregon.edu',
     },
   ]
 

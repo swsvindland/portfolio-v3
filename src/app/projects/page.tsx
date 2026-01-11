@@ -9,8 +9,30 @@ import logoPeriod from '@/images/logos/projects/PeriodTrack.png'
 import logoBlood from '@/images/logos/projects/BloodPressureTrack.png'
 import logoBody from '@/images/logos/projects/BodyTrack.png'
 import logoWater from '@/images/logos/projects/WaterTrack.png'
+import logoPayGrade from '@/images/logos/projects/PayGrade.png'
+import logoOmegaFyt from '@/images/logos/projects/OmegaFyt.png'
 
 const projects = [
+  {
+    name: 'OmegaFyt',
+    description:
+      'A moible application for tracking workouts, macros, supplements, and body measurements.',
+    link: {
+      href: 'https://omegafyt.com',
+      label: 'Website',
+    },
+    logo: logoOmegaFyt,
+  },
+  {
+    name: 'PayGrade',
+    description:
+      'A moible application for calculating report card allowances. Built for a client.',
+    link: {
+      href: 'https://paygradeapp.com',
+      label: 'Website',
+    },
+    logo: logoPayGrade,
+  },
   {
     name: 'Supplement Track',
     description: 'A moible application for tracking daily supplement intake.',
@@ -88,7 +110,7 @@ export default async function Projects() {
       >
         {projects.map((project) => (
           <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
               <Image
                 src={project.logo}
                 alt=""

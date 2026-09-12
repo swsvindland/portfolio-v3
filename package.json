@@ -2,6 +2,7 @@
   "name": "portfolio-v3",
   "version": "3.0.0",
   "private": true,
+  "type": "module",
   "license": "MIT",
   "packageManager": "pnpm@10.18.0",
   "scripts": {
@@ -19,7 +20,7 @@
     "@next/mdx": "^16.3.5",
     "@radix-ui/react-label": "^2.1.15",
     "@sendgrid/mail": "^8.1.6",
-    "@vercel/analytics": "^1.6.1",
+    "@vercel/analytics": "^2.0.1",
     "cheerio": "^1.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -38,12 +39,12 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@types/webpack-env": "^1.18.8",
-    "eslint": "^9.39.5",
+    "eslint": "^10.10.0",
     "eslint-config-next": "^16.3.5",
     "prettier": "^3.9.6",
-    "prettier-plugin-tailwindcss": "^0.7.4",
-    "sharp": "0.34.5",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "sharp": "0.35.4",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   }
 }

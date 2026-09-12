@@ -1,9 +1,9 @@
-import sgMail, { MailDataRequired } from '@sendgrid/mail'
+import sgMail from '@sendgrid/mail'
 import { NextResponse } from 'next/server'
 
 const sendEmail = async (email: string, body: string, phone?: string) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY ?? '')
-  const msg: MailDataRequired = {
+  const msg = {
     to: process.env.SENDGRID_TO, // Change to your recipient
     from: process.env.SENDGRID_FROM ?? '', // Change to your verified sender
     subject: 'Svindland Portfolio Contact',
